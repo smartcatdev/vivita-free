@@ -1,7 +1,7 @@
 <?php
 
-new Smartcat_Featured_Image_Meta_Box;
-class Smartcat_Featured_Image_Meta_Box {
+new Vivita_Featured_Image_Meta_Box;
+class Vivita_Featured_Image_Meta_Box {
 
     public function __construct() {
 

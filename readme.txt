@@ -3,17 +3,17 @@
 Contributors: smartcat
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, grid-layout, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, blog, photography, portfolio
 
-Requires at least: 4.0
+Requires at least: 4.4
 Tested up to: 4.6.1
 Stable tag: 1.0.1
 License: GPLv3 or later
-License URI: https://www.gnu.org/licenses/gpl-3.0.html
+License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
 Copyright 2016 Smartcat
 
 == Description ==
 
-Vivita is a gorgeous multi-purpose theme that is pixel-perfect. As beautiful as it is responsive and user-friendly, it works great as a portfolio or blog. 
+Vivita is a gorgeous, multi-purpose theme that features a colorful, pixel-perfect design. As beautiful as it is responsive and user-friendly, it works great as a portfolio or blog.
 
 == Installation ==
 
@@ -29,19 +29,17 @@ This theme supports the Our Team Showcase plugin.
 
 == Changelog ==
 
-= 1.0.0 - July 29 2016 =
+= 1.0.0 - August 3 2016 =
 * Initial release
 
-= 1.0.1 - August 3 2016 =
-* Added screenshot
-
-= 1.0.2 - November 23 2016 =
-* General code cleanup
+= 1.0.1 - December 12 2016 =
+* General code cleanup and adjustments based on past theme reviews
 * Styled comments section
-* Added more Google font options
-* Added Blog Roll customization options
+* Added more Google font and Blog Roll customization options
 * Moved WP Core custom logo settings to Logo & Title panel
 * Added Metabox to allow setting sidebar visibility on a per post/page basis
+* Added Metabox to allow setting featured image height & alignment on a per post/page basis
+* Added screenshot
 
 == Credits ==
 
@@ -64,20 +62,40 @@ This theme supports the Our Team Showcase plugin.
     - License URL (MIT)     http://opensource.org/licenses/MIT
     - License URL (OFL)     http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 
-4. slimScroll
+4. jQuery UI
+    - URL                   https://github.com/jquery/jquery-ui/
+    - License               MIT
+    - License URL           http://opensource.org/licenses/MIT
+
+5. jQuery slimScroll
     - URL                   http://rocha.la/jQuery-slimScroll
     - License               GPL & MIT
     - License URL (GPL)     http://www.gnu.org/licenses/gpl.html
     - License URL (MIT)     http://opensource.org/licenses/MIT
 
-5. Google Fonts
-    - URL                   http://www.google.com/fonts
+6. Google Fonts
+    - URL                   https://www.google.com/fonts/
     - License               SIL Open Font
     - License URL           http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 
-6. Homepage Image  
-    - URL                   https://pixabay.com/en/old-retro-antique-vintage-classic-1130743/
+7. TGM Plugin Activation  
+    - URL                   http://tgmpluginactivation.com/
+    - License               Licensed under GPLv2 or later
+    - License URL           http://www.gnu.org/licenses/gpl.html
+
+8. Images in screenshot
+    - URL                   
     - License               CC0
     - License URL           http://creativecommons.org/publicdomain/zero/1.0/deed.en
-    - Photographer          DariuszSankowski
+
+9. Other Images
+    - URL                   
+    - License               CC0
+    - License URL           http://creativecommons.org/publicdomain/zero/1.0/deed.en    
+
+10. Icons & Images
+    - Files                 sc-emblem-skyblue.png
+    - URL                   Personal images created by Smartcat
+    - License               CC0
+    - License URL           http://creativecommons.org/publicdomain/zero/1.0/deed.en
 

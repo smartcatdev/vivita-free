@@ -32,9 +32,6 @@ function vivita_customize_register( $wp_customize ) {
         
         // Extras Panel
         require_once('customizer/settings-extras.php');
-
-        // Custom Modules Panel
-        require_once('customizer/settings-custom-modules.php');
     
 	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
         

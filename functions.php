@@ -18,7 +18,7 @@ if ( ! function_exists( 'vivita_setup' ) ) :
 function vivita_setup() {
     
         if( !defined( 'VIVITA_VERSION' ) ) :
-            define('VIVITA_VERSION', '1.0.0');
+            define('VIVITA_VERSION', '1.0.1');
         endif;
     
 	/*
@@ -81,7 +81,7 @@ add_action( 'after_setup_theme', 'vivita_setup' );
  * @global int $content_width
  */
 function vivita_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'vivita_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'vivita_content_width', 1170 );
 }
 add_action( 'after_setup_theme', 'vivita_content_width', 0 );
 

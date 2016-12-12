@@ -211,18 +211,3 @@ $wp_customize->add_section( 'vivita_footer_section', array(
         'label'                 => __( 'Company name', 'vivita' ),
         'description'           => __( 'Leave blank to hide the copyright line', 'vivita' ),
     ) );   
-    
-    // Smartcat Branding
-    $wp_customize->add_setting( 'vivita_sc_branding_toggle', array (
-        'default'               => 'show',
-        'transport'             => 'refresh',
-        'sanitize_callback'     => 'vivita_sanitize_show_hide',
-    ) );
-    $wp_customize->add_control( 'vivita_sc_branding_toggle', array(
-        'type'                  => 'radio',
-        'section'               => 'vivita_footer_section',
-        'label'                 => __( 'Show "Designed by Smartcat" branding?', 'vivita' ),
-        'choices'               => array(
-            'show'      => __( 'Show', 'vivita' ),
-            'hide'      => __( 'Hide', 'vivita' ),
-    ) ) );

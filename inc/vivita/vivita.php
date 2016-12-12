@@ -29,20 +29,12 @@ function vivita_scripts() {
         // Styles
         wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/inc/css/bootstrap.min.css', array(), VIVITA_VERSION );
         wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/inc/css/font-awesome.min.css', array(), VIVITA_VERSION );
-        wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/inc/css/owl.carousel.css', array(), VIVITA_VERSION );
-        if( get_theme_mod( 'vivita_gallery_toggle', 'include' ) == 'include' ) :
-            wp_enqueue_style( 'unite', get_template_directory_uri() . '/inc/css/unite-gallery.css', array(), VIVITA_VERSION );
-        endif;
         wp_enqueue_style( 'vivita-main-style', get_template_directory_uri() . '/inc/css/style-human.css', array(), VIVITA_VERSION );
         
         // Scripts
         wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/inc/js/bootstrap.min.js', array('jquery'), VIVITA_VERSION, true );
         wp_enqueue_script( 'slimScroll', get_template_directory_uri() . '/inc/js/jquery.slimscroll.min.js', array('jquery'), VIVITA_VERSION, true );
         wp_enqueue_script( 'jquery-ui', get_template_directory_uri() . '/inc/js/jquery-ui.min.js', array('jquery'), VIVITA_VERSION, true );
-        wp_enqueue_script( 'owl-carousel-js', get_template_directory_uri() . '/inc/js/owl.carousel.min.js', array('jquery'), VIVITA_VERSION, true );
-        if( get_theme_mod( 'vivita_gallery_toggle', 'include' ) == 'include' ) :
-            wp_enqueue_script( 'unite-js', get_template_directory_uri() . '/inc/js/unite.min.js', array('jquery'), VIVITA_VERSION, true );
-        endif;
         wp_enqueue_script( 'vivita-main-script', get_template_directory_uri() . '/inc/js/custom.js', array('jquery', 'jquery-masonry'), VIVITA_VERSION, true );
         
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -399,9 +391,7 @@ function vivita_render_footer() { ?>
                                     </span>
                                 <?php endif; ?>
 
-                                <?php if ( get_theme_mod( 'vivita_sc_branding_toggle', 'show' ) == 'show' ) : ?>
-                                    <?php esc_html_e( 'Designed by ', 'vivita' ); ?> Smartcat <img src="<?php echo esc_url( get_template_directory_uri() . "/inc/images/sc-emblem-skyblue.png" ); ?>" alt="Smartcat">
-                                <?php endif; ?>
+                                <?php esc_html_e( 'Designed by ', 'vivita' ); ?> Smartcat <img src="<?php echo esc_url( get_template_directory_uri() . "/inc/images/sc-emblem-skyblue.png" ); ?>" alt="Smartcat">
                                     
                             </div>
 
@@ -901,15 +891,6 @@ function vivita_custom_script() { ?>
                doMasonry();
            });
            doMasonry();
-          
-//            // Gallery
-//            if( $(".athena-gallery") ) {
-//                $(".athena-gallery").unitegallery({
-//                    tiles_col_width: 390,
-//                    theme_appearance_order: '<?php echo get_theme_mod( 'athena_randomize_gallery', 'normal' ) == 'normal' ? esc_js( 'normal' ) : esc_js( 'shuffle' ); ?>',
-//                });
-//                $('[data-parallax="scroll"]').parallax();
-//            }
             
         });
 
@@ -1168,8 +1149,6 @@ function vivita_custom_css() { ?>
             }
             
         <?php endif; ?>
-        
-        
         
     </style>
     

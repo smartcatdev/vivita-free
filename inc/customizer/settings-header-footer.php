@@ -201,9 +201,9 @@ $wp_customize->add_section( 'vivita_footer_section', array(
 
     // Copyright Line Company Name
     $wp_customize->add_setting( 'vivita_footer_copyright', array (
-        'default'               => __( '&copy; Your Company 2016', 'vivita' ),
+        'default'               => __( 'Copyright Your Company 2016', 'vivita' ),
         'transport'             => 'refresh',
-        'sanitize_callback'     => 'sanitize_text_field',
+        'sanitize_callback'     => 'sanitize_textarea_field',
     ) );
     $wp_customize->add_control( 'vivita_footer_copyright', array(
         'type'                  => 'textarea',

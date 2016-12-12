@@ -385,9 +385,9 @@ function vivita_render_footer() { ?>
                             
                             <div id="footer-branding">
 
-                                <?php if ( get_theme_mod( 'vivita_footer_copyright', __( '&copy; Your Company 2016', 'vivita' ) ) != '' ) : ?>
+                                <?php if ( get_theme_mod( 'vivita_footer_copyright', __( 'Copyright Your Company 2016', 'vivita' ) ) != '' ) : ?>
                                     <span class="site-info">
-                                        <?php echo esc_html( get_theme_mod( 'vivita_footer_copyright', __( '&copy; Your Company 2016', 'vivita' ) ) ); ?>
+                                        <?php echo esc_html( get_theme_mod( 'vivita_footer_copyright', __( 'Copyright Your Company 2016', 'vivita' ) ) ); ?>
                                     </span>
                                 <?php endif; ?>
 

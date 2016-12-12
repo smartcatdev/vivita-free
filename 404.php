@@ -54,7 +54,7 @@ get_header(); ?>
                                                             <li class="menu-item menu-item-type-custom menu-item-object-custom">
 
                                                                 <a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>">
-                                                                   <?php echo __( 'Add a Primary Menu?', 'vivita' ); ?>
+                                                                   <?php echo esc_html( __( 'Add a Primary Menu?', 'vivita' ) ); ?>
                                                                 </a>
 
                                                             </li>

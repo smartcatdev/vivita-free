@@ -913,16 +913,16 @@ function vivita_custom_css() { ?>
         /* ---------- FONT SIZES ---------- */
         
         body {
-            font-size: <?php echo esc_attr( get_theme_mod( 'vivita_font_body_size', '14') ); ?>px; 
+            font-size: <?php echo intval( get_theme_mod( 'vivita_font_body_size', '14') ); ?>px; 
         }
                 
         #site-branding .site-title {
-            font-size: <?php echo esc_attr( get_theme_mod( 'vivita_title_font_size', '36') ); ?>px;
+            font-size: <?php echo intval( get_theme_mod( 'vivita_title_font_size', '36') ); ?>px;
         }
        
         .main-navigation li a,
         .main-navigation ul ul li a {
-            font-size: <?php echo esc_attr( get_theme_mod( 'vivita_nav_menu_font_size', '14') ); ?>px;
+            font-size: <?php echo intval( get_theme_mod( 'vivita_nav_menu_font_size', '14') ); ?>px;
         }
         
         /* ---------- FONT FAMILIES ---------- */
@@ -1116,7 +1116,7 @@ function vivita_custom_css() { ?>
         
         img.custom-logo { 
             width: auto;
-            height: <?php echo esc_attr( get_theme_mod( 'vivita_custom_logo_height', '150' ) ); ?>px;
+            height: <?php echo intval( get_theme_mod( 'vivita_custom_logo_height', '150' ) ); ?>px;
             <?php if ( get_theme_mod( 'vivita_logo_portrait_crop_style', 'default' ) != 'default' ) : ?>
                 border-radius: <?php echo get_theme_mod( 'vivita_logo_portrait_crop_style', 'default' ) == 'circle' ? esc_attr( '50%' ) : esc_attr( '15px' ); ?>;
             <?php endif; ?>

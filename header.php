@@ -58,7 +58,7 @@
                                 <li class="menu-item menu-item-type-custom menu-item-object-custom">
 
                                     <a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>">
-                                       <?php echo __( 'Add a Primary Menu?', 'vivita' ); ?>
+                                       <?php echo esc_html( __( 'Add a Primary Menu?', 'vivita' ) ); ?>
                                     </a>
 
                                 </li>
@@ -105,80 +105,80 @@
 
                             <div id="social-container">
 
-                                <?php if ( get_theme_mod( 'vivita_social_icon_facebook_url', '#' ) != '' ) : ?>
-                                    <a href="<?php echo esc_url( get_theme_mod( 'vivita_social_icon_facebook_url', '#' ) ); ?>">
+                                <?php if ( get_theme_mod( 'vivita_social_icon_facebook_url', '' ) != '' ) : ?>
+                                    <a href="<?php echo esc_url( get_theme_mod( 'vivita_social_icon_facebook_url', '' ) ); ?>">
                                         <div class="social-bubble">
                                             <i class="fa fa-facebook"></i>
                                         </div>
                                     </a>
                                 <?php endif; ?>
 
-                                <?php if ( get_theme_mod( 'vivita_social_icon_twitter_url', '#' ) != '' ) : ?>
-                                    <a href="<?php echo esc_url( get_theme_mod( 'vivita_social_icon_twitter_url', '#' ) ); ?>">
+                                <?php if ( get_theme_mod( 'vivita_social_icon_twitter_url', '' ) != '' ) : ?>
+                                    <a href="<?php echo esc_url( get_theme_mod( 'vivita_social_icon_twitter_url', '' ) ); ?>">
                                         <div class="social-bubble">
                                             <i class="fa fa-twitter"></i>
                                         </div>
                                     </a>
                                 <?php endif; ?>
 
-                                <?php if ( get_theme_mod( 'vivita_social_icon_google_url', '#' ) != '' ) : ?>
-                                    <a href="<?php echo esc_url( get_theme_mod( 'vivita_social_icon_google_url', '#' ) ); ?>">
+                                <?php if ( get_theme_mod( 'vivita_social_icon_google_url', '' ) != '' ) : ?>
+                                    <a href="<?php echo esc_url( get_theme_mod( 'vivita_social_icon_google_url', '' ) ); ?>">
                                         <div class="social-bubble">
                                             <i class="fa fa-google-plus"></i>
                                         </div>
                                     </a>
                                 <?php endif; ?>
 
-                                <?php if ( get_theme_mod( 'vivita_social_icon_linkedin_url', '#' ) != '' ) : ?>
-                                    <a href="<?php echo esc_url( get_theme_mod( 'vivita_social_icon_linkedin_url', '#' ) ); ?>">
+                                <?php if ( get_theme_mod( 'vivita_social_icon_linkedin_url', '' ) != '' ) : ?>
+                                    <a href="<?php echo esc_url( get_theme_mod( 'vivita_social_icon_linkedin_url', '' ) ); ?>">
                                         <div class="social-bubble">
                                             <i class="fa fa-linkedin"></i>
                                         </div>
                                     </a>
                                 <?php endif; ?>
 
-                                <?php if ( get_theme_mod( 'vivita_social_icon_behance_url', '#' ) != '' ) : ?>
-                                    <a href="<?php echo esc_url( get_theme_mod( 'vivita_social_icon_behance_url', '#' ) ); ?>">
+                                <?php if ( get_theme_mod( 'vivita_social_icon_behance_url', '' ) != '' ) : ?>
+                                    <a href="<?php echo esc_url( get_theme_mod( 'vivita_social_icon_behance_url', '' ) ); ?>">
                                         <div class="social-bubble">
                                             <i class="fa fa-behance"></i>
                                         </div>
                                     </a>
                                 <?php endif; ?>
 
-                                <?php if ( get_theme_mod( 'vivita_social_icon_instagram_url', '#' ) != '' ) : ?>
-                                    <a href="<?php echo esc_url( get_theme_mod( 'vivita_social_icon_instagram_url', '#' ) ); ?>">
+                                <?php if ( get_theme_mod( 'vivita_social_icon_instagram_url', '' ) != '' ) : ?>
+                                    <a href="<?php echo esc_url( get_theme_mod( 'vivita_social_icon_instagram_url', '' ) ); ?>">
                                         <div class="social-bubble">
                                             <i class="fa fa-instagram"></i>
                                         </div>
                                     </a>
                                 <?php endif; ?>
 
-                                <?php if ( get_theme_mod( 'vivita_social_icon_pinterest_url', '#' ) != '' ) : ?>
-                                    <a href="<?php echo esc_url( get_theme_mod( 'vivita_social_icon_pinterest_url', '#' ) ); ?>">
+                                <?php if ( get_theme_mod( 'vivita_social_icon_pinterest_url', '' ) != '' ) : ?>
+                                    <a href="<?php echo esc_url( get_theme_mod( 'vivita_social_icon_pinterest_url', '' ) ); ?>">
                                         <div class="social-bubble">
                                             <i class="fa fa-pinterest-p"></i>
                                         </div>
                                     </a>
                                 <?php endif; ?>
 
-                                <?php if ( get_theme_mod( 'vivita_social_icon_youtube_url', '#' ) != '' ) : ?>
-                                    <a href="<?php echo esc_url( get_theme_mod( 'vivita_social_icon_youtube_url', '#' ) ); ?>">
+                                <?php if ( get_theme_mod( 'vivita_social_icon_youtube_url', '' ) != '' ) : ?>
+                                    <a href="<?php echo esc_url( get_theme_mod( 'vivita_social_icon_youtube_url', '' ) ); ?>">
                                         <div class="social-bubble">
                                             <i class="fa fa-youtube-play"></i>
                                         </div>
                                     </a>
                                 <?php endif; ?>
 
-                                <?php if ( get_theme_mod( 'vivita_social_icon_vimeo_url', '#' ) != '' ) : ?>
-                                    <a href="<?php echo esc_url( get_theme_mod( 'vivita_social_icon_vimeo_url', '#' ) ); ?>">
+                                <?php if ( get_theme_mod( 'vivita_social_icon_vimeo_url', '' ) != '' ) : ?>
+                                    <a href="<?php echo esc_url( get_theme_mod( 'vivita_social_icon_vimeo_url', '' ) ); ?>">
                                         <div class="social-bubble">
                                             <i class="fa fa-vimeo"></i>
                                         </div>
                                     </a>
                                 <?php endif; ?>
                                 
-                                <?php if ( get_theme_mod( 'vivita_social_icon_soundcloud_url', '#' ) != '' ) : ?>
-                                    <a href="<?php echo esc_url( get_theme_mod( 'vivita_social_icon_soundcloud_url', '#' ) ); ?>">
+                                <?php if ( get_theme_mod( 'vivita_social_icon_soundcloud_url', '' ) != '' ) : ?>
+                                    <a href="<?php echo esc_url( get_theme_mod( 'vivita_social_icon_soundcloud_url', '' ) ); ?>">
                                         <div class="social-bubble">
                                             <i class="fa fa-soundcloud"></i>
                                         </div>

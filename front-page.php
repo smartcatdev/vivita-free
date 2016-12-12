@@ -42,7 +42,7 @@ $front = get_option( 'show_on_front' ); ?>
                                 </div>
                             <?php endif; ?>
                             
-                            <div id="front-page-blog" class="col-sm-<?php echo $front != 'posts' ? esc_attr( vivita_main_width() ) : esc_attr( '12' ); ?>">
+                            <div id="front-page-blog" class="col-sm-<?php echo $front != 'posts' ? intval( vivita_main_width() ) : intval( '12' ); ?>">
 
                                 <div class="row">
 
@@ -84,7 +84,7 @@ $front = get_option( 'show_on_front' ); ?>
                                             </div>
                                         <?php endif; ?>    
                                             
-                                        <div class="col-sm-<?php echo $front == 'posts' ? esc_attr( vivita_main_width() ) : esc_attr( '12' ); ?>">
+                                        <div class="col-sm-<?php echo $front == 'posts' ? intval( vivita_main_width() ) : intval( '12' ); ?>">
 
                                             <?php echo $front == 'posts' ? '<div class="vivita-blog-content"><div id="masonry-blog-wrapper"><div class="grid-sizer"></div><div class="gutter-sizer"></div>' : ''; ?>
 

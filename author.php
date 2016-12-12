@@ -95,7 +95,7 @@ get_header(); ?>
                                                 </div>
                                             <?php endif; ?>
 
-                                            <div class="col-sm-<?php echo esc_attr( vivita_main_width() ); ?>">
+                                            <div class="col-sm-<?php echo intval( vivita_main_width() ); ?>">
 
                                                 <div class="vivita-blog-content">
 

@@ -42,7 +42,7 @@ $sidebar_override = get_post_meta( get_the_ID(), 'vivita_sidebar_location', true
                 </div>
             <?php endif; ?>
             
-            <div class="col-sm-<?php echo esc_attr( vivita_main_width( $sidebar_override ) ); ?>">
+            <div class="col-sm-<?php echo intval( vivita_main_width( $sidebar_override ) ); ?>">
         
                 <header class="entry-header">
                     <?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>

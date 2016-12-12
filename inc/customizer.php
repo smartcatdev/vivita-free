@@ -51,14 +51,6 @@ add_action( 'customize_preview_init', 'vivita_customize_preview_js' );
  * Sanitization Functions
  */
 
-function vivita_sanitize_text( $input ) {
-    return sanitize_text_field( $input );
-}
-
-function vivita_sanitize_color( $input ) {
-    return sanitize_hex_color( $input );    
-}
-
 function vivita_sanitize_integer( $input ) {
     return is_numeric( $input ) ? intval( $input ) : '';
 }
@@ -171,39 +163,11 @@ function vivita_sanitize_social_style( $input ) {
     
 }
 
-function vivita_sanitize_on_off( $input ) {
-    
-    $valid_keys = array(
-        'include'       => __( 'Enable', 'vivita' ),
-        'exclude'       => __( 'Disable', 'vivita' ),
-    );
-    if ( array_key_exists( $input, $valid_keys ) ) {
-        return $input;
-    } else {
-        return '';
-    }  
-    
-}
-
 function vivita_sanitize_blog_roll_style( $input ) {
     
     $valid_keys = array(
         'multi-card'      => __( 'Multi-card', 'vivita' ),
         'full-width'      => __( 'Stacked Full-width', 'vivita' ),
-    );
-    if ( array_key_exists( $input, $valid_keys ) ) {
-        return $input;
-    } else {
-        return '';
-    }  
-    
-}
-
-function vivita_sanitize_gallery_order( $input ) {
-    
-    $valid_keys = array(
-        'normal'    => __( 'Default', 'vivita'),
-        'random'    => __( 'Randomize', 'vivita'),
     );
     if ( array_key_exists( $input, $valid_keys ) ) {
         return $input;

@@ -13,7 +13,7 @@ $comment_data = get_comment_count( get_the_ID() );
 
 <div class="blog-roll-item">
 
-    <article data-link="<?php echo esc_url( get_the_permalink( get_the_ID() ) ); ?>" id="post-<?php echo esc_attr( get_the_ID() ); ?>" <?php post_class(); ?>>
+    <article data-link="<?php echo esc_url( get_the_permalink( get_the_ID() ) ); ?>" id="post-<?php echo intval( get_the_ID() ); ?>" <?php post_class(); ?>>
 
         <?php if ( has_post_thumbnail() ) : ?>
             <div class="image">

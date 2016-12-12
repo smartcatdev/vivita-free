@@ -38,7 +38,7 @@ $wp_customize->add_section( 'vivita_blog_layout_section', array (
     $wp_customize->add_setting( 'vivita_blog_title', array (
         'default'               => __( 'Blog', 'vivita' ),
         'transport'             => 'refresh',
-        'sanitize_callback'     => 'vivita_sanitize_text',
+        'sanitize_callback'     => 'sanitize_text_field',
     ) );
     $wp_customize->add_control( 'vivita_blog_title', array(
         'type'                  => 'text',

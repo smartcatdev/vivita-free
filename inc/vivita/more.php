@@ -50,12 +50,12 @@ class Smartcat_Featured_Image_Meta_Box {
         echo '	<tr>';
         echo '		<th><label for="banner_meta_height" class="banner_meta_height_label">' . __( 'Banner Height', 'vivita' ) . '</label></th>';
         echo '		<td>';
-        echo '			<input type="number" id="banner_meta_height" name="banner_meta_height" class="banner_meta_height_field" value="' . esc_attr__( $banner_height ) . '" min="150" max="1000" step="50">';
+        echo '			<input type="number" id="banner_meta_height" name="banner_meta_height" class="banner_meta_height_field" value="' . intval( $banner_height ) . '" min="150" max="1000" step="50">';
         echo '		</td>';
         echo '	</tr>';
 
         echo '	<tr>';
-        echo '		<th><label for="banner_meta_img_align" class="banner_meta_img_align_label">' . __( 'Location', 'vivita' ) . '</label></th>';
+        echo '		<th><label for="banner_meta_img_align" class="banner_meta_img_align_label">' . __( 'Alignment', 'vivita' ) . '</label></th>';
         echo '		<td>';
         echo '	                <select id="banner_meta_img_align" name="banner_meta_img_align" class="banner_meta_img_align_field">';
                                     foreach( $alignments as $key => $value ) :

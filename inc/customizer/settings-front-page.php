@@ -51,7 +51,7 @@ $wp_customize->add_section( 'vivita_biography_section', array(
     $wp_customize->add_setting( 'vivita_promo_bio_button_label', array (
         'default'               => __( 'Show Me More', 'vivita' ),
         'transport'             => 'refresh',
-        'sanitize_callback'     => 'vivita_sanitize_text',
+        'sanitize_callback'     => 'sanitize_text_field',
     ) );
     $wp_customize->add_control( 'vivita_promo_bio_button_label', array(
         'type'                  => 'text',
@@ -118,7 +118,7 @@ $wp_customize->add_section( 'vivita_jumbotron_section', array(
     $wp_customize->add_setting( 'vivita_jumbotron_button_text', array (
         'default'               => __( 'Show Me More', 'vivita' ),
         'transport'             => 'refresh',
-        'sanitize_callback'     => 'vivita_sanitize_text',
+        'sanitize_callback'     => 'sanitize_text_field',
     ) );
     $wp_customize->add_control( 'vivita_jumbotron_button_text', array(
         'type'                  => 'text',

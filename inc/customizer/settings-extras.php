@@ -22,7 +22,7 @@ $wp_customize->add_section( 'vivita_error_page_section', array(
     $wp_customize->add_setting( 'vivita_error_page_heading', array (
         'default'               => __( 'Oops!', 'vivita' ),
         'transport'             => 'refresh',
-        'sanitize_callback'     => 'vivita_sanitize_text',
+        'sanitize_callback'     => 'sanitize_text_field',
     ) );
     $wp_customize->add_control( 'vivita_error_page_heading', array(
         'type'                  => 'text',
@@ -34,7 +34,7 @@ $wp_customize->add_section( 'vivita_error_page_section', array(
     $wp_customize->add_setting( 'vivita_error_page_subheading', array (
         'default'               => __( 'It looks like nothing was found at this location, please check the address and try again!', 'vivita' ),
         'transport'             => 'refresh',
-        'sanitize_callback'     => 'vivita_sanitize_text',
+        'sanitize_callback'     => 'sanitize_text_field',
     ) );
     $wp_customize->add_control( 'vivita_error_page_subheading', array(
         'type'                  => 'text',

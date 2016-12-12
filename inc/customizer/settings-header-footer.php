@@ -51,7 +51,7 @@ $wp_customize->add_section( 'vivita_header_social_links_section', array(
     
     // Facebook URL
     $wp_customize->add_setting( 'vivita_social_icon_facebook_url', array (
-        'default'               => '#',
+        'default'               => '',
         'transport'             => 'refresh',
         'sanitize_callback'     => 'esc_url_raw',
     ) );
@@ -63,7 +63,7 @@ $wp_customize->add_section( 'vivita_header_social_links_section', array(
     
     // Twitter URL
     $wp_customize->add_setting( 'vivita_social_icon_twitter_url', array (
-        'default'               => '#',
+        'default'               => '',
         'transport'             => 'refresh',
         'sanitize_callback'     => 'esc_url_raw',
     ) );
@@ -75,7 +75,7 @@ $wp_customize->add_section( 'vivita_header_social_links_section', array(
     
     // Google+ URL
     $wp_customize->add_setting( 'vivita_social_icon_google_url', array (
-        'default'               => '#',
+        'default'               => '',
         'transport'             => 'refresh',
         'sanitize_callback'     => 'esc_url_raw',
     ) );
@@ -87,7 +87,7 @@ $wp_customize->add_section( 'vivita_header_social_links_section', array(
     
     // LinkedIn URL
     $wp_customize->add_setting( 'vivita_social_icon_linkedin_url', array (
-        'default'               => '#',
+        'default'               => '',
         'transport'             => 'refresh',
         'sanitize_callback'     => 'esc_url_raw',
     ) );
@@ -99,7 +99,7 @@ $wp_customize->add_section( 'vivita_header_social_links_section', array(
     
     // Behance URL
     $wp_customize->add_setting( 'vivita_social_icon_behance_url', array (
-        'default'               => '#',
+        'default'               => '',
         'transport'             => 'refresh',
         'sanitize_callback'     => 'esc_url_raw',
     ) );
@@ -111,7 +111,7 @@ $wp_customize->add_section( 'vivita_header_social_links_section', array(
     
     // Instagram URL
     $wp_customize->add_setting( 'vivita_social_icon_instagram_url', array (
-        'default'               => '#',
+        'default'               => '',
         'transport'             => 'refresh',
         'sanitize_callback'     => 'esc_url_raw',
     ) );
@@ -123,7 +123,7 @@ $wp_customize->add_section( 'vivita_header_social_links_section', array(
     
     // Instagram URL
     $wp_customize->add_setting( 'vivita_social_icon_pinterest_url', array (
-        'default'               => '#',
+        'default'               => '',
         'transport'             => 'refresh',
         'sanitize_callback'     => 'esc_url_raw',
     ) );
@@ -135,7 +135,7 @@ $wp_customize->add_section( 'vivita_header_social_links_section', array(
     
     // YouTube URL
     $wp_customize->add_setting( 'vivita_social_icon_youtube_url', array (
-        'default'               => '#',
+        'default'               => '',
         'transport'             => 'refresh',
         'sanitize_callback'     => 'esc_url_raw',
     ) );
@@ -147,7 +147,7 @@ $wp_customize->add_section( 'vivita_header_social_links_section', array(
     
     // Vimeo URL
     $wp_customize->add_setting( 'vivita_social_icon_vimeo_url', array (
-        'default'               => '#',
+        'default'               => '',
         'transport'             => 'refresh',
         'sanitize_callback'     => 'esc_url_raw',
     ) );
@@ -159,7 +159,7 @@ $wp_customize->add_section( 'vivita_header_social_links_section', array(
 
     // SoundCloud URL
     $wp_customize->add_setting( 'vivita_social_icon_soundcloud_url', array (
-        'default'               => '#',
+        'default'               => '',
         'transport'             => 'refresh',
         'sanitize_callback'     => 'esc_url_raw',
     ) );
@@ -182,7 +182,7 @@ $wp_customize->add_section( 'vivita_navigation_overlay_section', array(
     $wp_customize->add_setting( 'vivita_navigation_title', array (
         'default'               => __( 'Navigation', 'vivita' ),
         'transport'             => 'refresh',
-        'sanitize_callback'     => 'vivita_sanitize_text',
+        'sanitize_callback'     => 'sanitize_text_field',
     ) );
     $wp_customize->add_control( 'vivita_navigation_title', array(
         'type'                  => 'text',
@@ -201,9 +201,9 @@ $wp_customize->add_section( 'vivita_footer_section', array(
 
     // Copyright Line Company Name
     $wp_customize->add_setting( 'vivita_footer_copyright', array (
-        'default'               => __( '&copy; Your Company 2016', 'vivita' ),
+        'default'               => __( 'Your Company 2016', 'vivita' ),
         'transport'             => 'refresh',
-        'sanitize_callback'     => 'vivita_sanitize_text',
+        'sanitize_callback'     => 'sanitize_text_field',
     ) );
     $wp_customize->add_control( 'vivita_footer_copyright', array(
         'type'                  => 'textarea',

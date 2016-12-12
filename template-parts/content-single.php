@@ -36,7 +36,7 @@ $sidebar_override = get_post_meta( get_the_ID(), 'vivita_sidebar_location', true
 
     <div id="post-content-image" class="col-sm-12" style="
         background-image: url(<?php echo has_post_thumbnail() ? esc_url( get_the_post_thumbnail_url( get_the_ID(), 'large' ) ) : esc_attr( '' ); ?>);
-        height: <?php echo get_post_meta( get_the_ID(), 'banner_meta_height', true ) ? esc_attr( get_post_meta( get_the_ID(), 'banner_meta_height', true ) ) : esc_attr( '400' ); ?>px;
+        height: <?php echo get_post_meta( get_the_ID(), 'banner_meta_height', true ) ? intval( get_post_meta( get_the_ID(), 'banner_meta_height', true ) ) : intval( '400' ); ?>px;
         background-position: 50% <?php echo esc_attr( $position ); ?>; 
     ">
     </div>
@@ -57,7 +57,7 @@ $sidebar_override = get_post_meta( get_the_ID(), 'vivita_sidebar_location', true
             </div>
         <?php endif; ?>
 
-        <div class="col-sm-<?php echo esc_attr( vivita_main_width( $sidebar_override ) ); ?>">
+        <div class="col-sm-<?php echo intval( vivita_main_width( $sidebar_override ) ); ?>">
 
             <div class="row">
 
@@ -117,8 +117,8 @@ $sidebar_override = get_post_meta( get_the_ID(), 'vivita_sidebar_location', true
                     </div><!-- .entry-content -->
 
                     <?php the_post_navigation( array(
-                        'prev_text' => __( 'Prev : %title' ),
-                        'next_text' => __( 'Next : %title' )
+                        'prev_text' => __( 'Prev : %title', 'vivita' ),
+                        'next_text' => __( 'Next : %title', 'vivita' )
                     )); ?>
 
                 </div>

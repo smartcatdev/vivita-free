@@ -391,7 +391,8 @@ function vivita_render_footer() { ?>
                                     </span>
                                 <?php endif; ?>
 
-                                <?php esc_html_e( 'Designed by ', 'vivita' ); ?> Smartcat <img src="<?php echo esc_url( get_template_directory_uri() . "/inc/images/sc-emblem-skyblue.png" ); ?>" alt="Smartcat">
+                                <?php printf( esc_html__( 'Designed by %s', 'vivita' ), 'Smartcat' ); ?> 
+                                <img src="<?php echo esc_url( trailingslashit( get_template_directory_uri() ) . 'inc/images/sc-emblem-skyblue.png' ); ?>" alt="<?php printf( esc_attr__( '%s Logo', 'vivita' ), 'Smartcat' ); ?>" />
                                     
                             </div>
 

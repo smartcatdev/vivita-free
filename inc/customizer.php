@@ -6,15 +6,6 @@
  */
 
 /**
- * Enqueue the custom CSS and JS for the Customizer.
- */
-function vivita_enqueue_customizer_styles() {
-    wp_enqueue_script( 'vivita-customizer-js', get_template_directory_uri() . '/inc/js/customizer.js', array( 'jquery', 'customize-controls' ), VIVITA_VERSION, true );
-    wp_enqueue_style('vivita-customizer-css', get_template_directory_uri() . '/inc/css/customizer.css', array(), VIVITA_VERSION );
-}
-add_action( 'customize_controls_enqueue_scripts', 'vivita_enqueue_customizer_styles' );
-
-/**
  * Add postMessage support for site title and description for the Theme Customizer.
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.

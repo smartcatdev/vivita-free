@@ -30,46 +30,14 @@ get_header(); ?>
                                         <header class="page-header">
 
                                             <h1 class="page-title">
-                                                <?php echo esc_html( get_theme_mod( 'vivita_error_page_heading', __( 'Oops!', 'vivita' ) ) ); ?>
+                                                <?php echo esc_html_e( 'Oops!', 'vivita' ); ?>
                                             </h1>
 
                                             <p class="page-subtitle">
-                                                <?php echo esc_html( get_theme_mod( 'vivita_error_page_subheading', __( 'It looks like nothing was found at this location, please check the address and try again!', 'vivita' ) ) ); ?>
+                                                <?php echo esc_html_e( 'It looks like nothing was found at this location, please check the address and try again!', 'vivita' ); ?>
                                             </p>
                                             
-                                            <?php if ( get_theme_mod( 'vivita_error_page_show_menu', 'show' ) == 'show' ) : ?>
-                                            
-                                                <?php if ( has_nav_menu( 'primary' ) ) : ?>
-                                            
-                                                    <nav class="main-nav main-navigation">
-                                                        <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-                                                    </nav>
-                                            
-                                                <?php else : ?>
-
-                                                    <div class="menu-testing-menu-container">
-
-                                                        <ul id="primary-menu" class="menu">
-
-                                                            <li class="menu-item menu-item-type-custom menu-item-object-custom">
-
-                                                                <a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>">
-                                                                   <?php echo esc_html( __( 'Add a Primary Menu?', 'vivita' ) ); ?>
-                                                                </a>
-
-                                                            </li>
-
-                                                        </ul>
-
-                                                    </div>
-
-                                                <?php endif; ?>
-                                            
-                                            <?php endif; ?>
-                                            
-                                            <?php if ( get_theme_mod( 'vivita_error_page_show_search', 'show' ) == 'show' ) : ?>
-                                                <?php get_search_form(); ?>
-                                            <?php endif; ?>
+                                            <?php get_search_form(); ?>
 
                                         </header><!-- .page-header -->
 

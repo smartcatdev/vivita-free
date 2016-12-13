@@ -29,10 +29,7 @@ function vivita_customize_register( $wp_customize ) {
         
         // Single Post Panel
         require_once('customizer/settings-single.php');
-        
-        // Extras Panel
-        require_once('customizer/settings-extras.php');
-    
+       
 	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
         
 }
@@ -89,7 +86,7 @@ function vivita_sanitize_logo_portrait_location( $input ) {
     
     $valid_keys = array(
         'header'    => __( 'Site Header', 'vivita' ),
-        'promo'     => __( 'Frontpage Promo/Bio Section', 'vivita' ),
+        'promo'     => __( 'Featured Post Section', 'vivita' ),
     );
     if ( array_key_exists( $input, $valid_keys ) ) {
         return $input;

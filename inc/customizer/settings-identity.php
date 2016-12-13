@@ -27,7 +27,7 @@ $wp_customize->add_section( 'title_tagline', array(
     
     // Logo / Portrait Location
     $wp_customize->add_setting( 'vivita_logo_portrait_location', array (
-        'default'               => 'promo',
+        'default'               => 'header',
         'transport'             => 'refresh',
         'sanitize_callback'     => 'vivita_sanitize_logo_portrait_location',
     ) );
@@ -37,7 +37,7 @@ $wp_customize->add_section( 'title_tagline', array(
         'label'                 => __( 'Where would you like your logo or portrait image to be shown?', 'vivita' ),
         'choices'               => array(
             'header'    => __( 'Site Header', 'vivita' ),
-            'promo'     => __( 'Frontpage Promo/Bio Section', 'vivita' ),
+            'promo'     => __( 'Featured Post Section', 'vivita' ),
     ) ) );
 
     // Logo / Portrait Style

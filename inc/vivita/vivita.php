@@ -120,36 +120,6 @@ function vivita_widgets_init() {
                 'before_title'  => '<h3 class="widget-title">',
                 'after_title'   => '</h3>',
         ) );
-        
-        register_sidebar( array(
-                'name'          => esc_html__( 'Page - Above Content', 'vivita' ),
-                'id'            => 'sidebar-page-above',
-                'description'   => esc_html__( 'Add widgets here.', 'vivita' ),
-                'before_widget' => '<div class="col-sm-4"><section id="%1$s" class="widget %2$s">',
-                'after_widget'  => '</section></div>',
-                'before_title'  => '<h3 class="widget-title">',
-                'after_title'   => '</h3>',
-        ) );
-
-        register_sidebar( array(
-                'name'          => esc_html__( 'Page - Below Content', 'vivita' ),
-                'id'            => 'sidebar-page-below',
-                'description'   => esc_html__( 'Add widgets here.', 'vivita' ),
-                'before_widget' => '<div class="col-sm-4"><section id="%1$s" class="widget %2$s">',
-                'after_widget'  => '</section></div>',
-                'before_title'  => '<h3 class="widget-title">',
-                'after_title'   => '</h3>',
-        ) );
-
-        register_sidebar( array(
-                'name'          => esc_html__( 'Post - Below Content', 'vivita' ),
-                'id'            => 'sidebar-post-below',
-                'description'   => esc_html__( 'Add widgets here.', 'vivita' ),
-                'before_widget' => '<div class="col-sm-4"><section id="%1$s" class="widget %2$s">',
-                'after_widget'  => '</section></div>',
-                'before_title'  => '<h3 class="widget-title">',
-                'after_title'   => '</h3>',
-        ) );
 
         register_sidebar( array(
                 'name'          => esc_html__( 'Footer', 'vivita' ),
@@ -196,7 +166,7 @@ function vivita_all_posts_array( $include_pages = false ) {
 }
 
 /**
- * Render the Promo / Bio section on the front page
+ * Render the Featured Post section on the front page
  */
 function vivita_render_promo_bio() { ?>
 
@@ -214,7 +184,7 @@ function vivita_render_promo_bio() { ?>
 
                         <div class="col-sm-8">
                             
-                            <?php if ( function_exists( 'has_custom_logo' ) && has_custom_logo() && get_theme_mod( 'vivita_logo_portrait_location', 'promo' ) == 'promo' ) :
+                            <?php if ( function_exists( 'has_custom_logo' ) && has_custom_logo() && get_theme_mod( 'vivita_logo_portrait_location', 'header' ) == 'promo' ) :
 
                                 if ( function_exists( 'the_custom_logo' ) ) : ?>
 
@@ -227,27 +197,45 @@ function vivita_render_promo_bio() { ?>
                                 <?php endif;
 
                             endif; ?>
-                                                    
-                            <?php $about_post = get_theme_mod( 'vivita_promo_bio_post', null ) == null ? null : get_post( get_theme_mod( 'vivita_promo_bio_post', null ) ); ?>
-                                                    
-                            <?php if ( !is_null( $about_post ) ) : ?>
+                                            
+                            <?php $about_post = get_theme_mod( 'vivita_promo_bio_post', '' ); ?>
+                                            
+                            <?php if ( empty( $about_post ) && get_post_status( 1 ) ) : ?> 
                                 
+                                <h2 id="about-primary">
+                                    <?php echo esc_html( get_the_title( 1 ) ); ?>
+                                </h2>   
+
+                                <hr class="accent-divider">
+
+                                <p id="about-secondary">
+                                    <?php echo apply_filters( 'the_content', get_post_field( 'post_content', 1 ) ); ?>
+                                </p>
+
+                                <?php if ( get_theme_mod( 'vivita_promo_bio_button_label', __( 'Show Me More', 'vivita' ) ) != '' ) : ?>
+                                    <a class="accent-button" href="<?php echo esc_url( get_the_permalink( 1 ) ); ?>">
+                                        <?php echo esc_html( get_theme_mod( 'vivita_promo_bio_button_label', __( 'Show Me More', 'vivita' ) ) ); ?>
+                                    </a>
+                                <?php endif; ?>
+                                    
+                            <?php else : ?>
+                                    
                                 <h2 id="about-primary">
                                     <?php echo esc_html( get_the_title( $about_post ) ); ?>
                                 </h2>   
-                                                    
+
                                 <hr class="accent-divider">
-                                
+
                                 <p id="about-secondary">
-                                    <?php echo esc_html( $about_post->post_content ); ?>
+                                    <?php echo apply_filters( 'the_content', get_post_field( 'post_content', $about_post ) ); ?>
                                 </p>
-                                
+
                                 <?php if ( get_theme_mod( 'vivita_promo_bio_button_label', __( 'Show Me More', 'vivita' ) ) != '' ) : ?>
                                     <a class="accent-button" href="<?php echo esc_url( get_the_permalink( $about_post ) ); ?>">
                                         <?php echo esc_html( get_theme_mod( 'vivita_promo_bio_button_label', __( 'Show Me More', 'vivita' ) ) ); ?>
                                     </a>
                                 <?php endif; ?>
-
+                            
                             <?php endif; ?>
                             
                         </div>
@@ -287,40 +275,34 @@ add_action('vivita_promo_bio', 'vivita_render_promo_bio');
  */
 function vivita_render_jumbotron() { ?>
     
-    <?php $jumbotron_post_id = get_theme_mod( 'vivita_jumbotron_post', null ); ?>
+    <?php $jumbotron_post_id = get_theme_mod( 'vivita_jumbotron_post', '' ); ?>
 
-    <?php if ( !is_null( $jumbotron_post_id ) ) : ?>
+    <div id="jumbotron-section" <?php echo !empty( $jumbotron_post_id ) && has_post_thumbnail( $jumbotron_post_id ) ? 'style="background-image: url(' . get_the_post_thumbnail_url( $jumbotron_post_id ) . ');"' : '' ; ?>>
 
-        <?php $jumbotron_post = get_post( $jumbotron_post_id ); ?>
+        <div id="jumbotron-overlayer">            
+        </div>
 
-        <div id="jumbotron-section" style="background-image: url( <?php echo esc_url( get_the_post_thumbnail_url( $jumbotron_post->ID ) ); ?> );">
+        <div class="container">
 
-            <div id="jumbotron-overlayer">            
-            </div>
+            <div class="row">
 
-            <div class="container">
+                <div class="col-sm-12">
 
-                <div class="row">
+                    <?php if ( get_the_title( $jumbotron_post_id ) ) : ?>
+                        <h2 class="overlay-title">
+                            <?php echo esc_html( get_the_title( $jumbotron_post_id ) ); ?>
+                        </h2>
+                    <?php endif; ?>
 
-                    <div class="col-sm-12">
+                    <?php if( get_theme_mod( 'vivita_jumbotron_button_text', __( 'Show Me More', 'vivita' ) ) != '' ) : ?>
 
-                        <?php if ( isset( $jumbotron_post->post_title ) && $jumbotron_post->post_title != '' ) : ?>
-                            <h2 class="overlay-title">
-                                <?php echo esc_html( get_the_title( $jumbotron_post ) ); ?>
-                            </h2>
-                        <?php endif; ?>
-                        
-                        <?php if( get_theme_mod( 'vivita_jumbotron_button_text', __( 'Show Me More', 'vivita' ) ) != '' ) : ?>
+                        <a href="<?php echo esc_url( get_the_permalink( $jumbotron_post_id ) ); ?>"
+                            <?php echo get_theme_mod( 'vivita_jumbotron_button_target', 'same' ) == 'same' ? esc_attr( '' ) : esc_attr( ' target="_BLANK" ' ); ?>
+                            class="accent-button jumbotron-btn">
+                                <?php echo esc_html( get_theme_mod( 'vivita_jumbotron_button_text', __( 'Show Me More', 'vivita' ) ) ); ?>
+                        </a>
 
-                            <a href="<?php echo esc_url( get_the_permalink( $jumbotron_post->ID ) ); ?>"
-                                <?php echo get_theme_mod( 'vivita_jumbotron_button_target', 'same' ) == 'same' ? esc_attr( '' ) : esc_attr( ' target="_BLANK" ' ); ?>
-                                class="accent-button jumbotron-btn">
-                                    <?php echo esc_html( get_theme_mod( 'vivita_jumbotron_button_text', __( 'Show Me More', 'vivita' ) ) ); ?>
-                            </a>
-
-                        <?php endif; ?>
-
-                    </div>
+                    <?php endif; ?>
 
                 </div>
 
@@ -328,7 +310,7 @@ function vivita_render_jumbotron() { ?>
 
         </div>
 
-    <?php endif; ?>
+    </div>
     
 <?php 
 }

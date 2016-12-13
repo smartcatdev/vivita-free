@@ -85,7 +85,7 @@
                     
                 <div class="branding-content">
 
-                    <?php if ( function_exists( 'has_custom_logo' ) && has_custom_logo() && get_theme_mod( 'vivita_logo_portrait_location', 'promo' ) == 'header' ) :
+                    <?php if ( function_exists( 'has_custom_logo' ) && has_custom_logo() && get_theme_mod( 'vivita_logo_portrait_location', 'header' ) == 'header' ) :
 
                         if ( function_exists( 'the_custom_logo' ) ) { the_custom_logo(); }
 

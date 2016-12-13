@@ -1,6 +1,6 @@
 <?php
 /**
- * The widget area in the Promo / Bio section.
+ * The widget area in the Featured Post section.
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *

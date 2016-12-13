@@ -31,11 +31,15 @@ $comment_data = get_comment_count( get_the_ID() );
                 </a>
             </h3>
             
-            <hr>
+            <?php if ( get_theme_mod( 'vivita_blog_roll_words_trim', 50 ) != 0 ) : ?>
             
-            <div class="post-content">
-                <?php echo esc_html( wp_trim_words( strip_tags( strip_shortcodes( get_the_content() ) ), get_theme_mod( 'vivita_blog_roll_words_trim', 50 ), '...' ) ); ?>
-            </div>
+                <hr>
+
+                <div class="post-content">
+                    <?php echo esc_html( wp_trim_words( strip_tags( strip_shortcodes( get_the_content() ) ), get_theme_mod( 'vivita_blog_roll_words_trim', 50 ), '...' ) ); ?>
+                </div>
+            
+            <?php endif; ?>
             
         </div>
         

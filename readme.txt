@@ -84,12 +84,19 @@ This theme supports the Our Team Showcase plugin.
     - License URL           http://www.gnu.org/licenses/gpl.html
 
 8. Images in screenshot
-    - URL                   
+    - URLs                  https://pixabay.com/en/office-two-people-business-team-1209640/
+                            https://pixabay.com/en/chess-board-chessboard-1838696/
+                            https://pixabay.com/en/ipad-online-tablet-internet-screen-407799/
+                            https://pixabay.com/en/fountain-pens-fountain-pen-filler-1393979/
+                            https://pixabay.com/en/girl-night-dark-young-woman-1826941/
+                            https://pixabay.com/en/architecture-skyscraper-1727807/
+                            https://pixabay.com/en/meeting-room-table-business-1806702/
+                            The profile picture in header of screenshot is a personal image
     - License               CC0
     - License URL           http://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 9. Other Images
-    - URL                   
+    - URL                   architecture.jpg - https://pixabay.com/en/architecture-skyscraper-1727807/
     - License               CC0
     - License URL           http://creativecommons.org/publicdomain/zero/1.0/deed.en    
 

@@ -13,8 +13,8 @@ $wp_customize->add_panel( 'vivita_front_page_panel', array (
 // Promo / Bio Section
 // ---------------------------------------------
 $wp_customize->add_section( 'vivita_biography_section', array(
-    'title'                 => __( 'Promo / Bio Section', 'vivita'),
-    'description'           => __( 'Customize the front page promotional section', 'vivita' ),
+    'title'                 => __( 'Featured Post Section', 'vivita'),
+    'description'           => __( 'Customize the front page Featured Post section', 'vivita' ),
     'panel'                 => 'vivita_front_page_panel'
 ) );
 
@@ -35,7 +35,7 @@ $wp_customize->add_section( 'vivita_biography_section', array(
     
     // Promo Bio Post
     $wp_customize->add_setting( 'vivita_promo_bio_post', array (
-        'default'               => null,
+        'default'               => '',
         'transport'             => 'refresh',
         'sanitize_callback'     => 'vivita_sanitize_post',
     ) );

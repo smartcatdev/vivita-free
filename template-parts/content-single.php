@@ -151,11 +151,3 @@ $sidebar_override = get_post_meta( get_the_ID(), 'vivita_sidebar_location', true
     </article>
         
 </div>
-
-<?php if ( is_active_sidebar( 'sidebar-post-below' ) ) : ?>
-    
-    <div id="post-sidebar-below" class="col-sm-12">
-        <?php get_sidebar( 'post-below' ); ?>
-    </div>
-    
-<?php endif; ?>

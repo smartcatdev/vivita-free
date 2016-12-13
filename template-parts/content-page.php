@@ -18,14 +18,6 @@ $sidebar_override = get_post_meta( get_the_ID(), 'vivita_sidebar_location', true
 
 <?php endif; ?>
 
-<?php if ( is_active_sidebar( 'sidebar-page-above' ) ) : ?>
-    
-    <div id="page-sidebar-above" class="col-sm-12">
-        <?php get_sidebar( 'page-above' ); ?>
-    </div>
-    
-<?php endif; ?>
-
 <div id="page-content" class="col-sm-12">
 
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -96,11 +88,3 @@ $sidebar_override = get_post_meta( get_the_ID(), 'vivita_sidebar_location', true
     </article><!-- #post-## -->
 
 </div>
-        
-<?php if ( is_active_sidebar( 'sidebar-page-below' ) ) : ?>
-    
-    <div id="page-sidebar-below" class="col-sm-12">
-        <?php get_sidebar( 'page-below' ); ?>
-    </div>
-    
-<?php endif; ?>

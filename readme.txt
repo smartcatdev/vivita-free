@@ -5,11 +5,12 @@ Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, grid-
 
 Requires at least: 4.4
 Tested up to: 4.6.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
-Copyright 2016 Smartcat
+vivita WordPress theme, Copyright 2017 smartcat
+Vivita is distributed under the terms of the GNU GPL
 
 == Description ==
 
@@ -40,6 +41,9 @@ This theme supports the Our Team Showcase plugin.
 * Added Metabox to allow setting sidebar visibility on a per post/page basis
 * Added Metabox to allow setting featured image height & alignment on a per post/page basis
 * Added screenshot
+
+= 1.0.2 - Jan 11 2017
+* General code clean up based on the theme review
 
 == Credits ==
 

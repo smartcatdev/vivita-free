@@ -1,7 +1,7 @@
 === Vivita ===
 
 Contributors: smartcat
-Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, grid-layout, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, blog, photography, portfolio
+Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, grid-layout, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, blog, portfolio
 
 Requires at least: 4.4
 Tested up to: 4.6.1

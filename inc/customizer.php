@@ -12,23 +12,23 @@
  */
 function vivita_customize_register( $wp_customize ) {
     
-        // Header Bar Panel
-        require_once('customizer/settings-header-footer.php');
+        // Header and Footer Panel
+        require_once trailingslashit( get_template_directory() ) . 'inc/customizer/settings-header-footer.php';
         
         // Site Logo & Title
-        require_once('customizer/settings-identity.php');
+        require_once trailingslashit( get_template_directory() ) . 'inc/customizer/settings-identity.php';
 
         // Front Page Panel
-        require_once('customizer/settings-front-page.php');
+        require_once trailingslashit( get_template_directory() ) . 'inc/customizer/settings-front-page.php';
 
         // Site Appearance Panel
-        require_once('customizer/settings-appearance.php');
+        require_once trailingslashit( get_template_directory() ) . 'inc/customizer/settings-appearance.php';
 
         // Blog Panel
-        require_once('customizer/settings-blog.php');
+        require_once trailingslashit( get_template_directory() ) . 'inc/customizer/settings-blog.php';
         
         // Single Post Panel
-        require_once('customizer/settings-single.php');
+        require_once trailingslashit( get_template_directory() ) . 'inc/customizer/settings-single.php';
        
 	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
         

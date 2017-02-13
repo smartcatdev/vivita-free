@@ -85,7 +85,7 @@ $wp_customize->add_section( 'vivita_jumbotron_section', array(
     
     // Jumbotron Post
     $wp_customize->add_setting( 'vivita_jumbotron_post', array (
-        'default'               => null,
+        'default'               => '',
         'transport'             => 'refresh',
         'sanitize_callback'     => 'vivita_sanitize_post',
     ) );

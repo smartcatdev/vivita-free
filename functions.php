@@ -88,29 +88,29 @@ add_action( 'after_setup_theme', 'vivita_content_width', 0 );
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+require_once trailingslashit( get_template_directory() ) . 'inc/template-tags.php';
 
 /**
  * Custom functions that act independently of the theme templates.
  */
-require get_template_directory() . '/inc/extras.php';
+require_once trailingslashit( get_template_directory() ) . 'inc/extras.php';
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+require_once trailingslashit( get_template_directory() ) . 'inc/customizer.php';
 
 /**
  * Load the theme functions file.
  */
-require get_template_directory() . '/inc/vivita/vivita.php';
+require_once trailingslashit( get_template_directory() ) . 'inc/vivita/vivita.php';
 
 /**
  * Load the theme extras file.
  */
-require get_template_directory() . '/inc/vivita/more.php';
+require_once trailingslashit( get_template_directory() ) . 'inc/vivita/more.php';
 
 /**
  * Load the TGM file.
  */
-require get_template_directory() . '/inc/tgm.php';
+require_once trailingslashit( get_template_directory() ) . 'inc/tgm.php';

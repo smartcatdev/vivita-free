@@ -184,19 +184,15 @@ function vivita_render_promo_bio() { ?>
 
                         <div class="col-sm-8">
                             
-                            <?php if ( function_exists( 'has_custom_logo' ) && has_custom_logo() && get_theme_mod( 'vivita_logo_portrait_location', 'header' ) == 'promo' ) :
+                            <?php if ( function_exists( 'has_custom_logo' ) && has_custom_logo() && get_theme_mod( 'vivita_logo_portrait_location', 'header' ) == 'promo' ) : ?>
 
-                                if ( function_exists( 'the_custom_logo' ) ) : ?>
+                                <div class="branding-content">
 
-                                    <div class="branding-content">
-                                        
-                                        <?php the_custom_logo(); ?>
-                                        
-                                    </div>
+                                    <?php the_custom_logo(); ?>
 
-                                <?php endif;
+                                </div>
 
-                            endif; ?>
+                            <?php endif; ?>
                                             
                             <?php $about_post = get_theme_mod( 'vivita_promo_bio_post', '' ); ?>
                                             
@@ -367,9 +363,9 @@ function vivita_render_footer() { ?>
                             
                             <div id="footer-branding">
 
-                                <?php if ( get_theme_mod( 'vivita_footer_copyright', __( 'Copyright Your Company 2016', 'vivita' ) ) != '' ) : ?>
+                                <?php if ( get_theme_mod( 'vivita_footer_copyright', get_bloginfo( 'name' ) ) ) : ?>
                                     <span class="site-info">
-                                        <?php echo esc_html( get_theme_mod( 'vivita_footer_copyright', __( 'Copyright Your Company 2016', 'vivita' ) ) ); ?>
+                                        <?php echo esc_html( get_theme_mod( 'vivita_footer_copyright', get_bloginfo( 'name' ) ) ); ?>
                                     </span>
                                 <?php endif; ?>
 
@@ -418,12 +414,25 @@ function vivita_render_homepage_widget_areas() { ?>
 
                                     <div class="col-sm-12">
 
-                                        <h6 class="widget-title">
-                                            <?php esc_html_e( 'Homepage A Widget Area', 'vivita' ); ?>
-                                        </h6>
-                                        <div class="textwidget">
-                                            <p class="default-text"><?php esc_html_e( 'You can enable/disable this widget area from Customizer - Frontpage - Homepage Widget A. This is a widget placeholder, and you can add any widget to it from Customizer - Widgets.', 'vivita' ); ?></p>
-                                        </div>
+                                        <?php if( current_user_can( 'edit_theme_options' ) ) :  ?>
+                                        
+                                            <h6 class="widget-title">
+                                                <?php esc_html_e( 'Homepage A Widget Area', 'vivita' ); ?>
+                                            </h6>
+                                            <div class="textwidget">
+                                                <p class="default-text"><?php esc_html_e( 'You can enable/disable this widget area from Customizer - Frontpage - Homepage Widget A. This is a widget placeholder, and you can add any widget to it from Customizer - Widgets.', 'vivita' ); ?></p>
+                                            </div>
+                                        
+                                        <?php else: ?>
+                                        
+                                            <h6 class="widget-title">
+                                                <?php bloginfo( 'name' ); ?>
+                                            </h6>
+                                            <div class="textwidget">
+                                                <p class="default-text"><?php bloginfo( 'description' ); ?></p>
+                                            </div>
+                                        
+                                        <?php endif; ?>
 
                                     </div>
 
@@ -466,12 +475,25 @@ function vivita_render_homepage_widget_areas() { ?>
 
                                     <div class="col-sm-12">
 
-                                        <h6 class="widget-title">
-                                            <?php esc_html_e( 'Homepage B Widget Area', 'vivita' ); ?>
-                                        </h6>
-                                        <div class="textwidget">
-                                            <p class="default-text"><?php esc_html_e( 'You can enable/disable this widget area from Customizer - Frontpage - Homepage Widget B. This is a widget placeholder, and you can add any widget to it from Customizer - Widgets.', 'vivita' ); ?></p>
-                                        </div>
+                                        <?php if( current_user_can( 'edit_theme_options' ) ) : ?>
+                                        
+                                            <h6 class="widget-title">
+                                                <?php esc_html_e( 'Homepage B Widget Area', 'vivita' ); ?>
+                                            </h6>
+                                            <div class="textwidget">
+                                                <p class="default-text"><?php esc_html_e( 'You can enable/disable this widget area from Customizer - Frontpage - Homepage Widget B. This is a widget placeholder, and you can add any widget to it from Customizer - Widgets.', 'vivita' ); ?></p>
+                                            </div>
+                                        
+                                        <?php else: ?>
+                                        
+                                            <h6 class="widget-title">
+                                                <?php bloginfo( 'name' ); ?>
+                                            </h6>
+                                            <div class="textwidget">
+                                                <p class="default-text"><?php bloginfo( 'description' ); ?></p>
+                                            </div>
+                                        
+                                        <?php endif; ?>
 
                                     </div>
 
@@ -514,12 +536,25 @@ function vivita_render_homepage_widget_areas() { ?>
 
                                     <div class="col-sm-12">
 
-                                        <h6 class="widget-title">
-                                            <?php esc_html_e( 'Homepage C Widget Area', 'vivita' ); ?>
-                                        </h6>
-                                        <div class="textwidget">
-                                            <p class="default-text"><?php esc_html_e( 'You can enable/disable this widget area from Customizer - Frontpage - Homepage Widget C. This is a widget placeholder, and you can add any widget to it from Customizer - Widgets.', 'vivita' ); ?></p>
-                                        </div>
+                                        <?php if( current_user_can( 'edit_theme_options' ) ) : ?>
+                                        
+                                            <h6 class="widget-title">
+                                                <?php esc_html_e( 'Homepage C Widget Area', 'vivita' ); ?>
+                                            </h6>
+                                            <div class="textwidget">
+                                                <p class="default-text"><?php esc_html_e( 'You can enable/disable this widget area from Customizer - Frontpage - Homepage Widget C. This is a widget placeholder, and you can add any widget to it from Customizer - Widgets.', 'vivita' ); ?></p>
+                                            </div>
+                                        
+                                        <?php else: ?>
+                                        
+                                            <h6 class="widget-title">
+                                                <?php bloginfo( 'name' ); ?>
+                                            </h6>
+                                            <div class="textwidget">
+                                                <p class="default-text"><?php bloginfo( 'description' ); ?></p>
+                                            </div>
+                                        
+                                        <?php endif; ?>
 
                                     </div>
 
@@ -562,12 +597,25 @@ function vivita_render_homepage_widget_areas() { ?>
 
                                     <div class="col-sm-12">
 
-                                        <h6 class="widget-title">
-                                            <?php esc_html_e( 'Homepage D Widget Area', 'vivita' ); ?>
-                                        </h6>
-                                        <div class="textwidget">
-                                            <p class="default-text"><?php esc_html_e( 'You can enable/disable this widget area from Customizer - Frontpage - Homepage Widget D. This is a widget placeholder, and you can add any widget to it from Customizer - Widgets.', 'vivita' ); ?></p>
-                                        </div>
+                                        <?php if( current_user_can( 'edit_theme_options' ) ) : ?>
+
+                                            <h6 class="widget-title">
+                                                <?php esc_html_e( 'Homepage D Widget Area', 'vivita' ); ?>
+                                            </h6>
+                                            <div class="textwidget">
+                                                <p class="default-text"><?php esc_html_e( 'You can enable/disable this widget area from Customizer - Frontpage - Homepage Widget D. This is a widget placeholder, and you can add any widget to it from Customizer - Widgets.', 'vivita' ); ?></p>
+                                            </div>
+                                        
+                                        <?php else: ?>
+                                        
+                                            <h6 class="widget-title">
+                                                <?php bloginfo( 'name' ); ?>
+                                            </h6>
+                                            <div class="textwidget">
+                                                <p class="default-text"><?php bloginfo( 'description' ); ?></p>
+                                            </div>
+                                        
+                                        <?php endif; ?>
 
                                     </div>
 
@@ -715,97 +763,6 @@ function vivita_main_width( $override = 'vivita_default' ) {
     endif;        
     
     return $width;
-
-}
-
-/**
- * Metabox for Page/Post Sidebars
- */
-class Vivita_Sidebar_Meta_Box {
-
-    public function __construct() {
-
-        if ( is_admin() ) {
-            add_action( 'load-post.php',     array( $this, 'init_metabox' ) );
-            add_action( 'load-post-new.php', array( $this, 'init_metabox' ) );
-        }
-
-    }
-
-    public function init_metabox() {
-
-        add_action( 'add_meta_boxes',        array( $this, 'add_metabox' )         );
-        add_action( 'save_post',             array( $this, 'save_metabox' ), 10, 2 );
-
-    }
-
-    public function add_metabox() {
-
-        add_meta_box(
-            'vivita-sidebar',
-            __( 'Sidebar', 'vivita' ),
-            array( $this, 'render_metabox' ),
-            array( 'post', 'page' ),
-            'side',
-            'high'
-        );
-
-    }
-
-    public function render_metabox( $post ) {
-
-        // Add nonce for security and authentication.
-        wp_nonce_field( 'vivita_nonce_action', 'vivita_nonce' );
-
-        // Retrieve an existing value from the database.
-        $vivita_sidebar_location = get_post_meta( $post->ID, 'vivita_sidebar_location', true );
-
-        // Set default values.
-        if( empty( $vivita_sidebar_location ) ) $vivita_sidebar_location = '';
-
-        // Form fields.
-        echo '<table class="form-table">';
-
-        echo '  <tr>';
-        echo '      <th><label for="vivita_sidebar_location" class="vivita_sidebar_location_label">' . __( 'Sidebar Location', 'vivita' ) . '</label></th>';
-        echo '      <td>';
-        echo '          <select id="vivita_sidebar_location" name="vivita_sidebar_location" class="vivita_sidebar_location_field">';
-        echo '          <option value="vivita_default" ' . esc_attr( selected( $vivita_sidebar_location, 'vivita_default', false ) ) . '> ' . __( 'Default', 'vivita' ) . '</option>';
-        echo '          <option value="vivita_left" ' . esc_attr( selected( $vivita_sidebar_location, 'vivita_left', false ) ) . '> ' . __( 'Left Sidebar', 'vivita' ) . '</option>';
-        echo '          <option value="vivita_right" ' . esc_attr( selected( $vivita_sidebar_location, 'vivita_right', false ) ) . '> ' . __( 'Right Sidebar', 'vivita' ) . '</option>';
-        echo '          <option value="vivita_leftright" ' . esc_attr( selected( $vivita_sidebar_location, 'vivita_leftright', false ) ) . '> ' . __( 'Left + Right Sidebars', 'vivita' ) . '</option>';
-        echo '          <option value="vivita_none" ' . esc_attr( selected( $vivita_sidebar_location, 'vivita_none', false ) ) . '> ' . __( 'No Sidebar', 'vivita' ) . '</option>';
-        echo '          </select>';
-        echo '          <p class="description">' . __( 'Do you want to display a sidebar on this post?', 'vivita' ) . '</p>';
-        echo '      </td>';
-        echo '  </tr>';
-
-
-        echo '</table>';
-
-    }
-
-    public function save_metabox( $post_id, $post ) {
-
-        // Add nonce for security and authentication.
-        $nonce_name   = isset( $_POST['vivita_nonce'] ) ? $_POST['vivita_nonce'] : '';
-        $nonce_action = 'vivita_nonce_action';
-
-        // Check if a nonce is set.
-        if ( ! isset( $nonce_name ) )
-            return;
-
-        // Check if a nonce is valid.
-        if ( ! wp_verify_nonce( $nonce_name, $nonce_action ) )
-            return;
-
-        // Sanitize user input.
-        $vivita_new_sidebar_location = isset( $_POST[ 'vivita_sidebar_location' ] ) ? $_POST[ 'vivita_sidebar_location' ] : '';
-
-        // Update the meta field in the database.
-        update_post_meta( $post_id, 'vivita_sidebar_location', $vivita_new_sidebar_location );
-
-    }
 
 }
 
@@ -1224,4 +1181,3 @@ function vivita_get_skin_colors() {
     
 }
 
-new Vivita_Sidebar_Meta_Box;

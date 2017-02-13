@@ -79,7 +79,7 @@ get_header(); ?>
                                                         </div>
 
                                                         <div class="pagination-links"> 
-                                                            <?php echo the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
+                                                            <?php the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
                                                         </div>
                                                             
                                                     </div>

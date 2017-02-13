@@ -201,12 +201,12 @@ $wp_customize->add_section( 'vivita_footer_section', array(
 
     // Copyright Line Company Name
     $wp_customize->add_setting( 'vivita_footer_copyright', array (
-        'default'               => __( 'Copyright Your Company 2016', 'vivita' ),
+        'default'               => get_bloginfo( 'name' ),
         'transport'             => 'refresh',
-        'sanitize_callback'     => 'sanitize_textarea_field',
+        'sanitize_callback'     => 'sanitize_text_field',
     ) );
     $wp_customize->add_control( 'vivita_footer_copyright', array(
-        'type'                  => 'textarea',
+        'type'                  => 'text',
         'section'               => 'vivita_footer_section',
         'label'                 => __( 'Company name', 'vivita' ),
         'description'           => __( 'Leave blank to hide the copyright line', 'vivita' ),

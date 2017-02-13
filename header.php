@@ -51,22 +51,26 @@
 
                     <?php else : ?>
 
-                        <div class="menu-testing-menu-container">
+                        <?php if ( current_user_can( 'edit_theme_options' ) ) : ?>
+                    
+                            <div class="menu-testing-menu-container">
 
-                            <ul id="primary-menu" class="menu">
+                                <ul id="primary-menu" class="menu">
 
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                                    <li class="menu-item menu-item-type-custom menu-item-object-custom">
 
-                                    <a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>">
-                                       <?php echo esc_html( __( 'Add a Primary Menu?', 'vivita' ) ); ?>
-                                    </a>
+                                        <a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>">
+                                           <?php echo esc_html( __( 'Add a Primary Menu?', 'vivita' ) ); ?>
+                                        </a>
 
-                                </li>
+                                    </li>
 
-                            </ul>
+                                </ul>
 
-                        </div>
+                            </div>
 
+                        <?php endif; ?>
+                    
                     <?php endif; ?>
 
                 </nav>
@@ -87,7 +91,7 @@
 
                     <?php if ( function_exists( 'has_custom_logo' ) && has_custom_logo() && get_theme_mod( 'vivita_logo_portrait_location', 'header' ) == 'header' ) :
 
-                        if ( function_exists( 'the_custom_logo' ) ) { the_custom_logo(); }
+                        the_custom_logo();
 
                     endif; ?>
 
@@ -199,8 +203,6 @@
                 <span id="menu-open" class="fa fa-bars"></span>
                 <span id="menu-close" class="fa fa-close"></span>
             </div>
-            
-            
             
         </div>
 

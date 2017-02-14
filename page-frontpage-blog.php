@@ -36,8 +36,9 @@ get_header();
                                     <?php 
                                         
                                     $args = array(
-                                        'post_type' => 'post',
-                                        'post_status' => 'publish',
+                                        'post_type'         => 'post',
+                                        'post_status'       => 'publish',
+                                        'posts_per_page'    => 6,
                                     );
 
                                     ?>
@@ -100,9 +101,15 @@ get_header();
 
                                                 </div>
 
-                                                <div class="pagination-links"> 
-                                                    <?php the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
-                                                </div>
+                                                <?php if ( get_option( 'page_for_posts' ) && get_theme_mod( 'vivita_frontpage_blog_read_more', __( 'Read more', 'vivita' ) ) != '' ) : ?> 
+                                                
+                                                    <div class="pagination-links"> 
+                                                        <a id="blog-template-read-more" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">
+                                                            <?php echo get_theme_mod( 'vivita_frontpage_blog_read_more', __( 'Read More', 'vivita' ) ); ?>
+                                                        </a>
+                                                    </div>
+
+                                                <?php endif; ?>
                                             
                                             </div>
 

@@ -121,3 +121,16 @@ $wp_customize->add_section( 'vivita_blog_layout_section', array (
             'multi-card'      => __( 'Multi-card', 'vivita' ),
             'full-width'      => __( 'Stacked Full-width', 'vivita' ),
     ) ) );
+    
+    // Blog Section Title
+    $wp_customize->add_setting( 'vivita_frontpage_blog_read_more', array (
+        'default'               => __( 'Read More', 'vivita' ),
+        'transport'             => 'refresh',
+        'sanitize_callback'     => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'vivita_frontpage_blog_read_more', array(
+        'type'                  => 'text',
+        'section'               => 'vivita_blog_layout_section',
+        'label'                 => __( 'Frontpage Blog Template - "Read More" Button', 'vivita' ),
+        'des'                 => __( 'When using the Frontpage Blog page template, six posts will show by default, and this button will link to the page set as your blog', 'vivita' ),
+    ) );

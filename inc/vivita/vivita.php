@@ -194,27 +194,9 @@ function vivita_render_promo_bio() { ?>
 
                             <?php endif; ?>
                                             
-                            <?php $about_post = get_theme_mod( 'vivita_promo_bio_post', '' ); ?>
+                            <?php $about_post = get_theme_mod( 'vivita_promo_bio_post', 1 ); ?>
                                             
-                            <?php if ( empty( $about_post ) && get_post_status( 1 ) ) : ?> 
-                                
-                                <h2 id="about-primary">
-                                    <?php echo esc_html( get_the_title( 1 ) ); ?>
-                                </h2>   
-
-                                <hr class="accent-divider">
-
-                                <p id="about-secondary">
-                                    <?php echo apply_filters( 'the_content', get_post_field( 'post_content', 1 ) ); ?>
-                                </p>
-
-                                <?php if ( get_theme_mod( 'vivita_promo_bio_button_label', __( 'Show Me More', 'vivita' ) ) != '' ) : ?>
-                                    <a class="accent-button" href="<?php echo esc_url( get_the_permalink( 1 ) ); ?>">
-                                        <?php echo esc_html( get_theme_mod( 'vivita_promo_bio_button_label', __( 'Show Me More', 'vivita' ) ) ); ?>
-                                    </a>
-                                <?php endif; ?>
-                                    
-                            <?php else : ?>
+                            <?php if ( !empty( $about_post ) && get_post( $about_post ) ) : ?> 
                                     
                                 <h2 id="about-primary">
                                     <?php echo esc_html( get_the_title( $about_post ) ); ?>
@@ -271,34 +253,38 @@ add_action('vivita_promo_bio', 'vivita_render_promo_bio');
  */
 function vivita_render_jumbotron() { ?>
     
-    <?php $jumbotron_post_id = get_theme_mod( 'vivita_jumbotron_post', '' ); ?>
+    <?php $jumbotron_post_id = get_theme_mod( 'vivita_jumbotron_post', 1 ); ?>
 
-    <div id="jumbotron-section" <?php echo !empty( $jumbotron_post_id ) && has_post_thumbnail( $jumbotron_post_id ) ? 'style="background-image: url(' . get_the_post_thumbnail_url( $jumbotron_post_id ) . ');"' : '' ; ?>>
+    <?php if ( !empty( $jumbotron_post_id ) && get_post( $jumbotron_post_id ) ) : ?> 
 
-        <div id="jumbotron-overlayer">            
-        </div>
+        <div id="jumbotron-section" <?php echo has_post_thumbnail( $jumbotron_post_id ) ? 'style="background-image: url(' . get_the_post_thumbnail_url( $jumbotron_post_id ) . ');"' : '' ; ?>>
 
-        <div class="container">
+            <div id="jumbotron-overlayer">            
+            </div>
 
-            <div class="row">
+            <div class="container">
 
-                <div class="col-sm-12">
+                <div class="row">
 
-                    <?php if ( get_the_title( $jumbotron_post_id ) ) : ?>
-                        <h2 class="overlay-title">
-                            <?php echo esc_html( get_the_title( $jumbotron_post_id ) ); ?>
-                        </h2>
-                    <?php endif; ?>
+                    <div class="col-sm-12">
 
-                    <?php if( get_theme_mod( 'vivita_jumbotron_button_text', __( 'Show Me More', 'vivita' ) ) != '' ) : ?>
+                        <?php if ( get_the_title( $jumbotron_post_id ) ) : ?>
+                            <h2 class="overlay-title">
+                                <?php echo esc_html( get_the_title( $jumbotron_post_id ) ); ?>
+                            </h2>
+                        <?php endif; ?>
 
-                        <a href="<?php echo esc_url( get_the_permalink( $jumbotron_post_id ) ); ?>"
-                            <?php echo get_theme_mod( 'vivita_jumbotron_button_target', 'same' ) == 'same' ? esc_attr( '' ) : esc_attr( ' target="_BLANK" ' ); ?>
-                            class="accent-button jumbotron-btn">
-                                <?php echo esc_html( get_theme_mod( 'vivita_jumbotron_button_text', __( 'Show Me More', 'vivita' ) ) ); ?>
-                        </a>
+                        <?php if( get_theme_mod( 'vivita_jumbotron_button_text', __( 'Show Me More', 'vivita' ) ) != '' ) : ?>
 
-                    <?php endif; ?>
+                            <a href="<?php echo esc_url( get_the_permalink( $jumbotron_post_id ) ); ?>"
+                                <?php echo get_theme_mod( 'vivita_jumbotron_button_target', 'same' ) == 'same' ? esc_attr( '' ) : esc_attr( ' target="_BLANK" ' ); ?>
+                                class="accent-button jumbotron-btn">
+                                    <?php echo esc_html( get_theme_mod( 'vivita_jumbotron_button_text', __( 'Show Me More', 'vivita' ) ) ); ?>
+                            </a>
+
+                        <?php endif; ?>
+
+                    </div>
 
                 </div>
 
@@ -306,9 +292,8 @@ function vivita_render_jumbotron() { ?>
 
         </div>
 
-    </div>
+    <?php endif; 
     
-<?php 
 }
 add_action('vivita_jumbotron', 'vivita_render_jumbotron');
 
@@ -369,8 +354,10 @@ function vivita_render_footer() { ?>
                                     </span>
                                 <?php endif; ?>
 
-                                <?php printf( esc_html__( 'Designed by %s', 'vivita' ), 'Smartcat' ); ?> 
-                                <img src="<?php echo esc_url( trailingslashit( get_template_directory_uri() ) . 'inc/images/sc-emblem-skyblue.png' ); ?>" alt="<?php printf( esc_attr__( '%s Logo', 'vivita' ), 'Smartcat' ); ?>" />
+                                <a href="https://smartcatdesign.net" rel="designer">
+                                    <?php printf( esc_html__( 'Designed by %s', 'vivita' ), 'Smartcat' ); ?> 
+                                    <img src="<?php echo esc_url( trailingslashit( get_template_directory_uri() ) . 'inc/images/sc-emblem-skyblue.png' ); ?>" alt="<?php printf( esc_attr__( '%s Logo', 'vivita' ), 'Smartcat' ); ?>" />
+                                </a>
                                 
                             </div>
 
@@ -995,7 +982,8 @@ function vivita_custom_css() { ?>
                 
             /* --- TERTIARY --- */
             
-                .pagination-links .page-numbers.current {
+                .pagination-links .page-numbers.current,
+                a#blog-template-read-more {
                     background-color: <?php echo esc_attr( $skin[ 'tertiary' ] ); ?>;
                 }
                 

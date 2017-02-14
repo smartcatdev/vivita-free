@@ -35,7 +35,7 @@ $wp_customize->add_section( 'vivita_biography_section', array(
     
     // Promo Bio Post
     $wp_customize->add_setting( 'vivita_promo_bio_post', array (
-        'default'               => '',
+        'default'               => 1,
         'transport'             => 'refresh',
         'sanitize_callback'     => 'vivita_sanitize_post',
     ) );
@@ -85,7 +85,7 @@ $wp_customize->add_section( 'vivita_jumbotron_section', array(
     
     // Jumbotron Post
     $wp_customize->add_setting( 'vivita_jumbotron_post', array (
-        'default'               => '',
+        'default'               => 1,
         'transport'             => 'refresh',
         'sanitize_callback'     => 'vivita_sanitize_post',
     ) );

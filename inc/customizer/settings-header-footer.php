@@ -208,6 +208,6 @@ $wp_customize->add_section( 'vivita_footer_section', array(
     $wp_customize->add_control( 'vivita_footer_copyright', array(
         'type'                  => 'text',
         'section'               => 'vivita_footer_section',
-        'label'                 => __( 'Company name', 'vivita' ),
-        'description'           => __( 'Leave blank to hide the copyright line', 'vivita' ),
+        'label'                 => __( 'Footer Text', 'vivita' ),
+        'description'           => __( 'Leave blank to hide this text', 'vivita' ),
     ) );   

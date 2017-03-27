@@ -189,56 +189,6 @@ $wp_customize->add_section( 'vivita_home_widget_area_b_section', array(
     ) ) );
 
 // ---------------------------------------------
-// Homepage Widget C
-// ---------------------------------------------
-$wp_customize->add_section( 'vivita_home_widget_area_c_section', array(
-    'title'                 => __( 'Homepage Widget Area C', 'vivita'),
-    'panel'                 => 'vivita_front_page_panel'
-) );
-
-    // Toggle Visibility of Widget Area C
-    $wp_customize->add_setting( 'vivita_toggle_widget_area_c', array (
-        'default'               => 'show',
-        'transport'             => 'refresh',
-        'sanitize_callback'     => 'vivita_sanitize_show_hide',
-    ) );
-    $wp_customize->add_control( 'vivita_toggle_widget_area_c', array(
-        'type'                  => 'radio',
-        'section'               => 'vivita_home_widget_area_c_section',
-        'label'                 => __( 'Show Home Page Widget Area C?', 'vivita' ),
-        'choices'               => array(
-            'show'      => __( 'Show', 'vivita' ),
-            'hide'      => __( 'Hide', 'vivita' ),
-    ) ) );
-
-// ---------------------------------------------
-// Homepage Widget D
-// ---------------------------------------------
-$wp_customize->add_section( 'vivita_home_widget_area_d_section', array(
-    'title'                 => __( 'Homepage Widget Area D', 'vivita'),
-    'panel'                 => 'vivita_front_page_panel'
-) );
-
-    // Toggle Visibility of Widget Area D
-    $wp_customize->add_setting( 'vivita_toggle_widget_area_d', array (
-        'default'               => 'show',
-        'transport'             => 'refresh',
-        'sanitize_callback'     => 'vivita_sanitize_show_hide',
-    ) );
-    $wp_customize->add_control( 'vivita_toggle_widget_area_d', array(
-        'type'                  => 'radio',
-        'section'               => 'vivita_home_widget_area_d_section',
-        'label'                 => __( 'Show Home Page Widget Area D?', 'vivita' ),
-        'choices'               => array(
-            'show'      => __( 'Show', 'vivita' ),
-            'hide'      => __( 'Hide', 'vivita' ),
-    ) ) );
-
-// ---------------------------------------------
 // Static Front Page
 // ---------------------------------------------
-    $wp_customize->add_section( 'static_front_page', array(
-        'priority'              => 10,
-        'title'                 => __( 'Static Front Page', 'vivita'),
-        'panel'  => 'vivita_front_page_panel',
-    ) );
+    $wp_customize->get_section( 'static_front_page' )->panel = 'vivita_front_page_panel';

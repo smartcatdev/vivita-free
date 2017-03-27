@@ -47,6 +47,8 @@ This theme supports the Our Team Showcase plugin.
 
 = 1.0.3 - March 25 2017
 * General code clean up and updates based on theme review feedback
+* updated language file
+* added single team member template file
 
 == Credits ==
 

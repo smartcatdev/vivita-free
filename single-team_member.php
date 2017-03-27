@@ -29,7 +29,6 @@ endif;
 
                     <div id="page-content-inner" class="container">
 
-                        <div class="row">
 
                             <?php while ( have_posts() ) : the_post(); ?>
                                 <div class="sc_team_single_member <?php echo esc_attr( $options[ 'single_template' ] ); ?>">
@@ -124,18 +123,18 @@ endif;
                                     </div>
 
                                 </div>
-
-                            </div>
-
+                            <?php endwhile; ?>
                         </div>
 
-                    </div>
+                </div><!-- col-sm-12 -->
 
-                </div>
+            </div><!-- row -->
 
-        </main><!-- #main -->
+        </div><!-- container-fluid -->
 
-    </div><!-- #primary -->
+    </main><!-- #main -->
 
-<?php endwhile; ?>
+</div><!-- #primary -->
+
+
 <?php get_footer(); ?>

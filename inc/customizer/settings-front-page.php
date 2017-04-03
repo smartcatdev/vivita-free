@@ -93,7 +93,7 @@ $wp_customize->add_section( 'vivita_jumbotron_section', array(
         'type'                  => 'select',
         'section'               => 'vivita_jumbotron_section',
         'label'                 => __( 'Jumbotron Post - Select Post or Page', 'vivita' ),
-        'description'           => __( 'The title of your selected post/page will be automatically displayed', 'vivita' ),
+        'description'           => __( 'The title of your selected post/page will be automatically displayed.<b>To change the image you need to edit the Page/Post you have selected and Set the Featured Image from the Page/Post edit screen.</b>', 'vivita' ),
         'choices'               => vivita_all_posts_array( true ),
     ) );
     

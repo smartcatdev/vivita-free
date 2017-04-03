@@ -63,7 +63,12 @@ function vivita_register_required_plugins() {
                 'name'      =>  'Our Team Showcase',
                 'slug'      =>  'our-team-enhanced',
                 'required'  => false,
-            )
+            ),
+            array (
+                'name' => __( 'uCare - Support Ticket System', 'layla' ),
+                'slug' => 'ucare-support-system',
+                'required' => false,
+            ),
             
 	);
 

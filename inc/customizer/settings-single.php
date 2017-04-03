@@ -1,22 +1,13 @@
 <?php
 
 // ---------------------------------------------
-// Single Post Panel
-// ---------------------------------------------
-$wp_customize->add_panel( 'vivita_single_post_panel', array (
-    'title'                 => __( 'Single Post', 'vivita' ),
-    'description'           => __( 'Customize the appearance of the Single Post', 'vivita' ),
-    'priority'              => 10
-) );
-
-// ---------------------------------------------
-// Layout Section
+// Single Section
 // ---------------------------------------------
 
 $wp_customize->add_section( 'vivita_single_post_layout_section', array (
-    'title'                 => __( 'Layout', 'vivita' ),
+    'title'                 => __( 'Single Post', 'vivita' ),
     'description'           => __( 'Customize the layout of your single post template', 'vivita' ),
-    'panel'                 => 'vivita_single_post_panel',
+    'priority'              => 10
 ) );
 
 // ---------------------------------------------

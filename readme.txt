@@ -4,8 +4,8 @@ Contributors: smartcat
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, grid-layout, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, blog, portfolio
 
 Requires at least: 4.4
-Tested up to: 4.6.1
-Stable tag: 1.0.2
+Tested up to: 4.7.3
+Stable tag: 1.0.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -44,6 +44,14 @@ This theme supports the Our Team Showcase plugin.
 
 = 1.0.2 - Jan 11 2017
 * General code clean up based on the theme review
+
+= 1.0.3 - March 25 2017
+* General code clean up and updates based on theme review feedback
+* updated language file
+* added single team member template file
+
+= 1.0.4 - April 3 2017
+* Added option for Pro version
 
 == Credits ==
 

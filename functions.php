@@ -18,7 +18,7 @@ if ( ! function_exists( 'vivita_setup' ) ) :
 function vivita_setup() {
     
         if( !defined( 'VIVITA_VERSION' ) ) :
-            define('VIVITA_VERSION', '1.0.2');
+            define('VIVITA_VERSION', '1.0.4');
         endif;
     
 	/*

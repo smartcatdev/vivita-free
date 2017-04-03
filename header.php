@@ -36,7 +36,7 @@
                     <div id="menu-overlay-header">
 
                         <h3 class="navigation-title">
-                            <?php esc_html_e( get_theme_mod( 'vivita_navigation_title', __( 'Navigation', 'vivita' ) ) ); ?>
+                            <?php esc_html( get_theme_mod( 'vivita_navigation_title', __( 'Navigation', 'vivita' ) ) ); ?>
                         </h3>
 
                     </div>

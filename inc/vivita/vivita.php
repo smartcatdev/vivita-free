@@ -33,9 +33,8 @@ function vivita_scripts() {
         
         // Scripts
         wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/inc/js/bootstrap.min.js', array('jquery'), VIVITA_VERSION, true );
-        wp_enqueue_script( 'slimScroll', get_template_directory_uri() . '/inc/js/jquery.slimscroll.min.js', array('jquery'), VIVITA_VERSION, true );
-        wp_enqueue_script( 'jquery-ui', get_template_directory_uri() . '/inc/js/jquery-ui.min.js', array('jquery'), VIVITA_VERSION, true );
-        wp_enqueue_script( 'vivita-main-script', get_template_directory_uri() . '/inc/js/custom.js', array('jquery', 'jquery-masonry'), VIVITA_VERSION, true );
+        wp_enqueue_script( 'jquery-slimScroll', get_template_directory_uri() . '/inc/js/jquery.slimscroll.min.js', array('jquery'), VIVITA_VERSION, true );
+        wp_enqueue_script( 'vivita-main-script', get_template_directory_uri() . '/inc/js/custom.js', array('jquery', 'jquery-masonry', 'jquery-ui-core'), VIVITA_VERSION, true );
         
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -94,26 +93,6 @@ function vivita_widgets_init() {
         register_sidebar( array(
                 'name'          => esc_html__( 'Homepage B', 'vivita' ),
                 'id'            => 'sidebar-front-b',
-                'description'   => esc_html__( 'Add widgets here.', 'vivita' ),
-                'before_widget' => '<div class="col-sm-4"><section id="%1$s" class="widget %2$s">',
-                'after_widget'  => '</section></div>',
-                'before_title'  => '<h3 class="widget-title">',
-                'after_title'   => '</h3>',
-        ) );
-
-        register_sidebar( array(
-                'name'          => esc_html__( 'Homepage C', 'vivita' ),
-                'id'            => 'sidebar-front-c',
-                'description'   => esc_html__( 'Add widgets here.', 'vivita' ),
-                'before_widget' => '<div class="col-sm-4"><section id="%1$s" class="widget %2$s">',
-                'after_widget'  => '</section></div>',
-                'before_title'  => '<h3 class="widget-title">',
-                'after_title'   => '</h3>',
-        ) );
-        
-        register_sidebar( array(
-                'name'          => esc_html__( 'Homepage D', 'vivita' ),
-                'id'            => 'sidebar-front-d',
                 'description'   => esc_html__( 'Add widgets here.', 'vivita' ),
                 'before_widget' => '<div class="col-sm-4"><section id="%1$s" class="widget %2$s">',
                 'after_widget'  => '</section></div>',
@@ -205,7 +184,7 @@ function vivita_render_promo_bio() { ?>
                                 <hr class="accent-divider">
 
                                 <p id="about-secondary">
-                                    <?php echo apply_filters( 'the_content', get_post_field( 'post_content', $about_post ) ); ?>
+                                    <?php echo wp_trim_words( wp_strip_all_tags( apply_filters( 'the_content', get_post_field( 'post_content', $about_post ) ) ), 50 ); ?>
                                 </p>
 
                                 <?php if ( get_theme_mod( 'vivita_promo_bio_button_label', __( 'Show Me More', 'vivita' ) ) != '' ) : ?>
@@ -504,127 +483,6 @@ function vivita_render_homepage_widget_areas() { ?>
     
     <?php endif; ?>
     
-    <!-- Homepage Area C -->
-    <?php if ( get_theme_mod( 'vivita_toggle_widget_area_c', 'show' ) == 'show' ) : ?>
-    
-        <?php if ( ! is_active_sidebar( 'sidebar-front-c' ) ) : ?>
-
-            <div class="container-fluid area-c">
-                
-                <div class="row">
-                    
-                    <div class="col-sm-12">
-                        
-                        <div class="container">
-                            
-                            <section class="front-page-widget area-c">
-
-                                <div class="row">
-
-                                    <div class="col-sm-12">
-
-                                        <?php if( current_user_can( 'edit_theme_options' ) ) : ?>
-                                        
-                                            <h6 class="widget-title">
-                                                <?php esc_html_e( 'Homepage C Widget Area', 'vivita' ); ?>
-                                            </h6>
-                                            <div class="textwidget">
-                                                <p class="default-text"><?php esc_html_e( 'You can enable/disable this widget area from Customizer - Frontpage - Homepage Widget C. This is a widget placeholder, and you can add any widget to it from Customizer - Widgets.', 'vivita' ); ?></p>
-                                            </div>
-                                        
-                                        <?php else: ?>
-                                        
-                                            <h6 class="widget-title">
-                                                <?php bloginfo( 'name' ); ?>
-                                            </h6>
-                                            <div class="textwidget">
-                                                <p class="default-text"><?php bloginfo( 'description' ); ?></p>
-                                            </div>
-                                        
-                                        <?php endif; ?>
-
-                                    </div>
-
-                                </div>
-
-                            </section>
-                            
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-    
-            </div>
-
-        <?php else : ?>
-
-            <?php get_sidebar( 'front-c' ); ?>
-
-        <?php endif; ?>
-    
-    <?php endif; ?>
-
-    <!-- Homepage Area D -->
-    <?php if ( get_theme_mod( 'vivita_toggle_widget_area_d', 'show' ) == 'show' ) : ?>
-    
-        <?php if ( ! is_active_sidebar( 'sidebar-front-d' ) ) : ?>
-
-            <div class="container-fluid area-d">
-                
-                <div class="row">
-                    
-                    <div class="col-sm-12">
-                        
-                        <div class="container">
-                            
-                            <section class="front-page-widget area-d">
-
-                                <div class="row">
-
-                                    <div class="col-sm-12">
-
-                                        <?php if( current_user_can( 'edit_theme_options' ) ) : ?>
-
-                                            <h6 class="widget-title">
-                                                <?php esc_html_e( 'Homepage D Widget Area', 'vivita' ); ?>
-                                            </h6>
-                                            <div class="textwidget">
-                                                <p class="default-text"><?php esc_html_e( 'You can enable/disable this widget area from Customizer - Frontpage - Homepage Widget D. This is a widget placeholder, and you can add any widget to it from Customizer - Widgets.', 'vivita' ); ?></p>
-                                            </div>
-                                        
-                                        <?php else: ?>
-                                        
-                                            <h6 class="widget-title">
-                                                <?php bloginfo( 'name' ); ?>
-                                            </h6>
-                                            <div class="textwidget">
-                                                <p class="default-text"><?php bloginfo( 'description' ); ?></p>
-                                            </div>
-                                        
-                                        <?php endif; ?>
-
-                                    </div>
-
-                                </div>
-
-                            </section>
-                            
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-    
-            </div>
-
-        <?php else : ?>
-
-            <?php get_sidebar( 'front-d' ); ?>
-
-        <?php endif; ?>
-    
-    <?php endif; ?>
     
 <?php }
 add_action( 'vivita_homepage_widget_areas', 'vivita_render_homepage_widget_areas' );

@@ -26,17 +26,17 @@ function vivita_customize_register( $wp_customize ) {
             </p>
             
             <p>
-            <h3><?php _e( 'Pro Features:', 'layla' ); ?></h3>
+            <h3><?php _e( 'Pro Features:', 'vivita' ); ?></h3>
                 <ol>
-                    <li><?php _e( 'FAQ, Call-to-action, Contact Info & Contact Form Widgets', 'layla' ) ?></li>
-                    <li><?php _e( 'Responsive Image Gallery', 'layla' ) ?></li>
-                    <li><?php _e( 'Clients, Projects, News & Events Post Types & Widgets', 'layla' ) ?></li>
-                    <li><?php _e( 'Testimonials & Work History', 'layla' ) ?></li>
-                    <li><?php _e( '11 Additional page & post templates', 'layla' ) ?></li>
-                    <li><?php _e( '5 Additional widget areas', 'layla' ) ?></li>
-                    <li><?php _e( '13 Additional widgets', 'layla' ) ?></li>
-                    <li><?php _e( 'Social sharing & Google Analytics tracking code', 'layla' ) ?></li>
-                    <li><?php _e( 'Remove the "Design by Smartcat" brading', 'layla' ) ?></li>
+                    <li><?php _e( 'FAQ, Call-to-action, Contact Info & Contact Form Widgets', 'vivita' ) ?></li>
+                    <li><?php _e( 'Responsive Image Gallery', 'vivita' ) ?></li>
+                    <li><?php _e( 'Clients, Projects, News & Events Post Types & Widgets', 'vivita' ) ?></li>
+                    <li><?php _e( 'Testimonials & Work History', 'vivita' ) ?></li>
+                    <li><?php _e( '11 Additional page & post templates', 'vivita' ) ?></li>
+                    <li><?php _e( '5 Additional widget areas', 'vivita' ) ?></li>
+                    <li><?php _e( '13 Additional widgets', 'vivita' ) ?></li>
+                    <li><?php _e( 'Social sharing & Google Analytics tracking code', 'vivita' ) ?></li>
+                    <li><?php _e( 'Remove the "Design by Smartcat" brading', 'vivita' ) ?></li>
                 </ol>
             </p>
             

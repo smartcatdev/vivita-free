@@ -5,7 +5,7 @@ Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, grid-
 
 Requires at least: 4.4
 Tested up to: 4.7.3
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -52,6 +52,9 @@ This theme supports the Our Team Showcase plugin.
 
 = 1.0.4 - April 3 2017
 * Added option for Pro version
+
+= 1.0.5 - April 3 2017
+* Fix text domain
 
 == Credits ==
 

@@ -65,7 +65,7 @@ function vivita_register_required_plugins() {
                 'required'  => false,
             ),
             array (
-                'name' => __( 'uCare - Support Ticket System', 'layla' ),
+                'name' => __( 'uCare - Support Ticket System', 'vivita' ),
                 'slug' => 'ucare-support-system',
                 'required' => false,
             ),
